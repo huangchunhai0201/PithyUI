@@ -17,7 +17,8 @@
  *  参数  [Obj]                     说明                         类型                         默认值
  *
  *  title                          标题                       String                        无
- *  content                        内容                       String
+ *  content                        内容                       String                        无
+ *  maskClose                      蒙层是否关闭                boolean                       true
  */
 $.PITHY.Modal = {
     info: function (o) {
@@ -38,7 +39,7 @@ $.PITHY.Modal = {
             "error": "<i class='Pithy-Modal-icon icon iconfont'>&#xe631;</i>",
             "confirm": "<i class='Pithy-Modal-icon icon iconfont'>&#xe637;</i>"
         };
-        var _defaultSetting = {title: "", content: "", icon: _iconMap[type]};
+        var _defaultSetting = {title: "", content: "", icon: _iconMap[type], maskClose: true};
         var _setting = $.extend({}, _defaultSetting, o);
         var _renderHtml = "<div class='Pithy-modal'><div class='Pithy-modal-header'><span class='Pithy-modal-title'>$${title}</span><span class='Pithy-modal-close'><i class='icon iconfont'>&#xe62d;</i></span><div class='Pithy-modal-title'></div></div><div class='Pithy-modal-content'>$${icon}$${content}</div><div class='Pithy-modal-footer'></div></div>";
 
