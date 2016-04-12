@@ -29,11 +29,17 @@ $.PITHY.Modal = {
     _render: function (o, type) {
         var defaultSetting = {title: "", content: "", icon: type};
         var obj = $.extend({}, defaultSetting, o);
-        var _renderHtml = "<div>$${content}</div><i class='icon iconfont'>&#xe604;</i>"
+        var _renderHtml = "<div class='Pithy-modal'><div class='Pithy-modal-header'><span class='Pithy-modal-close'><i class='icon iconfont'>&#xe62d;</i></span><div class='Pithy-modal-title'></div></div><div class='Pithy-modal-content'><i class='Pithy-Modal-icon icon iconfont'>&#xe637;</i>$${content}</div><div class='Pithy-modal-footer'></div></div>";
 
-        var renderHtml = juicer(_renderHtml, obj);
+        var $renderHtml = $(juicer(_renderHtml, obj));
+        $("body").append($renderHtml);
 
-        $("body").append(renderHtml);
+        var left = ($(window).width() / 2) - ($renderHtml.outerWidth() / 2);
+        var top = ($(window).height() / 2) - ($renderHtml.outerHeight() / 2) - 100;
+        $renderHtml.css({
+            left: left + 'px',
+            top: top + 'px'
+        });
 
     }
 }
