@@ -201,6 +201,7 @@
 .Pithy-modal-header {height: 30px;position: relative;line-height: 30px;border-bottom: 1px solid #E9E9E9;background-color: #2F323A;color: #FFF;}
 .Pithy-Modal-icon {color: #2DB7F5;font-size: 18px;padding-right: 8px;}
 .Pithy-modal-close {position: absolute;right: 10px;cursor: pointer;}
+.Pithy-modal-title {position: absolute;left: 10px;}
 .Pithy-modal-close:hover {font-weight: bold;}
 .Pithy-modal-content {padding: 30px 20px;}
 

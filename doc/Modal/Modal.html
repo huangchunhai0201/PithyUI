@@ -11,16 +11,11 @@
     <script src="/PithyUI/js-h/Init.js"></script>
     <script src="/PithyUI/js-h/Modal.js"></script>
     <script>
-        $(document).ready(function() {
-            $.PITHY.Modal.info({
-                title: "",
-                content: "hello world"
-            });
-        });
     </script>
 </head>
 <body>
-
-</li>
+<button onclick="$.PITHY.Modal.info({title: 'info',content: '信息提示'})">信息提示</button>
+<button onclick="$.PITHY.Modal.success({title: 'success',content: '成功提示'})">成功提示</button>
+<button onclick="$.PITHY.Modal.error({title: 'error',content: '失败提示'})">失败提示</button>
 </body>
 </html>
