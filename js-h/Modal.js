@@ -43,7 +43,7 @@ $.PITHY.Modal = {
         var _renderHtml = "<div class='Pithy-modal'><div class='Pithy-modal-header'><span class='Pithy-modal-title'>$${title}</span><span class='Pithy-modal-close'><i class='icon iconfont'>&#xe62d;</i></span><div class='Pithy-modal-title'></div></div><div class='Pithy-modal-content'>$${icon}$${content}</div><div class='Pithy-modal-footer'></div></div>";
 
         _self.$renderHtml = $(juicer(_renderHtml, _setting));
-        _self.$renderHtml.find('.Pithy-modal-close').click(function() {
+        _self.$renderHtml.find('.Pithy-modal-close').click(function () {
             _self._remove();
         });
         $("body").append(_self.$renderHtml);
@@ -56,7 +56,7 @@ $.PITHY.Modal = {
         });
 
     },
-    _remove: function() {
+    _remove: function () {
         if (this.$renderHtml && this.$renderHtml.length > 0) {
             this.$renderHtml.remove();
         }
