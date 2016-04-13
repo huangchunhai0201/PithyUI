@@ -8,16 +8,16 @@
     <link rel="stylesheet" href="/PithyUI/lib/bootstrap-3.3.5/bootstrap.css"/>
 
     <link rel="stylesheet" href="/PithyUI/css/Pithy.css"/>
-    <script src="/PithyUI/js-h/Init.js"></script>
     <script src="/PithyUI/js-h/Modal.js"></script>
     <script>
     </script>
 </head>
 <body>
 <div style="margin-top: 200px;">
-    <button onclick="$.PITHY.Modal.info({title: 'info',content: '信息提示'})">信息提示</button>
-    <button onclick="$.PITHY.Modal.success({title: 'success',content: '成功提示'})">成功提示</button>
-    <button onclick="$.PITHY.Modal.error({title: 'error',content: '失败提示'})">失败提示</button>
+    <button class="btn btn-info" onclick="$.PITHY_Modal.info({title: 'info',content: '信息提示'})">信息提示</button>
+    <button class="btn btn-success" onclick="$.PITHY_Modal.success({title: 'success',content: '成功提示'})">成功提示</button>
+    <button class="btn btn-danger" onclick="$.PITHY_Modal.error({title: 'error',content: '失败提示'})">失败提示</button>
+    <button class="btn btn-primary" onclick="$.PITHY_Modal.confirm({title: 'confirm',content: '确认提示'})">确认提示</button>
 </div>
 </body>
 </html>

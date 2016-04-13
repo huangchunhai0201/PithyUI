@@ -4,7 +4,7 @@
 
 /**
  *  模态对话框。
- *  $.PITHY.Modal.xxx()
+ *  $.PITHY_Modal.xxx()
  *
  *  Modal.info
  *  Modal.success
@@ -18,9 +18,10 @@
  *
  *  title                          标题                       String                        无
  *  content                        内容                       String                        无
- *  maskClose                      蒙层是否关闭                boolean                       true
+ *  maskClose                      是否关闭蒙层                boolean                       true   [待完成]
+ *  move                           是否可以移动                boolean                       true   [待完成]
  */
-$.PITHY.Modal = {
+$.PITHY_Modal = {
     info: function (o) {
         this._render(o, "info");
     },
@@ -29,6 +30,10 @@ $.PITHY.Modal = {
     },
     error: function (o) {
         this._render(o, "error");
+    },
+    confirm: function(o) { //待完成
+        o.content = "此功能待完成！！！";
+        this.info(o);
     },
     _render: function (o, type) {
         var _self = this;
@@ -41,7 +46,7 @@ $.PITHY.Modal = {
         };
         var _defaultSetting = {title: "", content: "", icon: _iconMap[type], maskClose: true};
         var _setting = $.extend({}, _defaultSetting, o);
-        var _renderHtml = "<div class='Pithy-modal'><div class='Pithy-modal-header'><span class='Pithy-modal-title'>$${title}</span><span class='Pithy-modal-close'><i class='icon iconfont'>&#xe62d;</i></span><div class='Pithy-modal-title'></div></div><div class='Pithy-modal-content'>$${icon}$${content}</div><div class='Pithy-modal-footer'></div></div>";
+        var _renderHtml = "<div class='Pithy-modal'><div class='Pithy-modal-header'><span class='Pithy-modal-title'>$${title}</span><span class='Pithy-modal-close'><i class='Pithy-modal-closeIcon icon iconfont'>&#xe62d;</i></span><div class='Pithy-modal-title'></div></div><div class='Pithy-modal-content'>$${icon}$${content}</div><div class='Pithy-modal-footer'></div></div>";
 
         _self.$renderHtml = $(juicer(_renderHtml, _setting));
         _self.$renderHtml.find('.Pithy-modal-close').click(function () {
