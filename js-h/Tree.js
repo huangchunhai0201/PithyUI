@@ -15,8 +15,11 @@
  *
  *  multiple                       是否支持多选                boolean                        false                    就相当于默认时单选
  */
-$.fn.extend({
-    PITHY_Tree: function (o) {
-        $.PITHY_Modal.info({title: "提示", content: "待开发！"});
-    }
-});
+(function ($) {
+    $.fn.extend({
+        PITHY_Tree: function (o) {
+
+            return this;
+        }
+    });
+})(jQuery);
