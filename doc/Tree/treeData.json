@@ -1,0 +1,41 @@
+{
+    "result": [
+        {
+            "departName": "智通公司",
+            "childList": [
+                {
+                    "departName": "公安事业部"
+                },
+                {
+                    "departName": "交通事业部"
+                },
+                {
+                    "departName": "规划事业部"
+                }
+            ]
+        },
+        {
+            "departName": "智通公司",
+            "childList": [
+                {
+                    "departName": "公安事业部",
+                    "childList": [
+                        {
+                            "departName": "公安事业部1-1"
+                        },
+                        {
+                            "departName": "公安事业部1-2"
+                        }
+                    ]
+                },
+                {
+                    "departName": "交通事业部"
+                },
+                {
+                    "departName": "规划事业部"
+                }
+            ]
+        }
+    ],
+    "retCode": 0
+}
