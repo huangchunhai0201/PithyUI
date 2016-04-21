@@ -23,31 +23,27 @@
             $.Utils.ajaxGet("treeData.json", function (data) {
                 if (data.retCode === 0) {
                     var treeData = data.result;
-                    _a.call(self, treeData, 0);
+                    var $ul = $("<ul></ul>");
+                    $(self).html($ul);
+                    _a.call(self, $ul, treeData, 0);
                 }
             });
 
             return this;
         }
     });
-    function _a(treeData, level) {
-        //递归相当于定义了很多函数，函数的参数都是不一样的。
-        //本质上还是执行函数。而且是多个函数。除了根部的其他每个函数都是嵌套在其他函数中执行的，依赖于上个函数中的level参数。
+    function _a($ul, treeData, level) {
+        //递归相当于定义了很多函数，函数的参数都是     不一样的。
+        //本质上还是执行函数。而且是多个函数。除了根部的其他每个函数都是嵌套在其他函数中执行的，依赖于上个函数中的level参数。就是依赖于参数，这个参数一般都是上个函数中的。
         for (var i = 0; i < treeData.length; i++) {
             var item = treeData[i];
-            if (level === 0) {
-                console.info(item.departName);
-            } else if (level === 1) {
-                console.info('--' + item.departName);
-            } else if (level ===2) {
-                console.info('----'+item.departName);
-            }
+            var $li = $("<li>" + item.departName + "</li>");
+            $ul.append($li);
             if (item.childList) {
-                _a(item.childList, (level + 1));
+                var $subUl = $("<ul></ul>");
+                $li.append($subUl);
+                _a($subUl, item.childList, (level + 1));
             }
         }
-
-        var $html = $("<div>template</div>");
-        $(this).html($html);
     }
 })(jQuery);
