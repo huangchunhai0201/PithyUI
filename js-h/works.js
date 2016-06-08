@@ -3,6 +3,7 @@
  */
 (function () {
     var modules = [
+        "Init.js",
         "Utils.js",
         "Modal.js",
         "Tree.js"
