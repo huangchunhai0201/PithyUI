@@ -23,17 +23,23 @@
  */
 (function ($) {
     Modal.renders = {
-        "default": '<div class="pithy-modal ${clazz}" style="${style}">' +
-        '   <div class="pithy-modal-panel">' +
-        '       <div class="pithy-modal-title">' +
+        "default": '<div class="pithy-modal ${clazz}" style="position: fixed;z-index: 99999;margin: 0;padding: 0;${style}">' +
+        '   <div class="pithy-modal-content">' +
+        '       <div class="pithy-modal-header">' +
         '           <span class="modalTitle">' +
         '               <div style="display: inline-block;">${title}</div>' +
         '           </span>' +
         '           <div class="modalClose">' +
+        '               <i class="modalCloseIcon icon iconfont">&#xe62d;</i>' +
         '           </div>' +
         '       </div>' +
-        '       <div class="pithy-modal-status icon iconfont">${statusIcon}</div>' +
-        '       <div class="modalContent">${message}</div>' +
+        '       <div class="pithy-modal-body">' +
+        '           <i class="pithy-modal-statusCommon pithy-modal-${status} icon iconfont">$${statusIcon}</i>' +
+        '           <div  class="modalContent" style="display: inline-block;">${message}</div>' +
+        '       </div>' +
+        '       <div class="pithy-modal-footer">' +
+        '           <div class="btn pithy-btn-ok"><span>确 定</span></div>' +
+        '       </div>' +
         '   </div>' +
         '</div>',
         "info": "",
@@ -63,21 +69,25 @@
         info: function (info) {
             this._info = $.extend(this._info, info);
             this._info.statusIcon = '&#xe637;';
+            this._info.status = 'info';
             this._open('default');
         },
         success: function (info) {
             this._info = $.extend(this._info, info);
             this._info.statusIcon = '';
+            this._info.status = 'success';
             this._open('default');
         },
         error: function (info) {
             this._info = $.extend(this._info, info);
             this._info.statusIcon = '';
+            this._info.status = 'error';
             this._open('default');
         },
         confirm: function (info) {
             this._info = $.extend(this._info, info);
             this._info.statusIcon = '';
+            this._info.status = 'confirm';
             this._open('confirm');
         },
         getRender: function (render) {
