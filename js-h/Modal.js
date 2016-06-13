@@ -17,7 +17,7 @@
  *  参数  [Obj]                     说明                         类型                         默认值
  *
  *  title                          标题                       String                        无
- *  content                        内容                       String                        无
+ *  message                        内容                       String                        无
  *  maskClose                      是否关闭蒙层                boolean                       true   [待完成]
  *  move                           是否可以移动                boolean                       true   [待完成]
  */
