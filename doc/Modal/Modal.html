@@ -9,10 +9,10 @@
 </head>
 <body>
 <div style="margin-top: 200px;">
-    <button class="btn btn-info" onclick="$.PITHY.Modal.info({title: '提示',message: '信息提示'})">信息提示</button>
-    <button class="btn btn-success" onclick="$.PITHY.Modal.success({title: 'success',content: '成功提示'})">成功提示</button>
-    <button class="btn btn-danger" onclick="$.PITHY.Modal.error({title: 'error',content: '失败提示'})">失败提示</button>
-    <button class="btn btn-primary" onclick="$.PITHY.Modal.confirm({title: 'confirm',content: '确认提示'})">确认提示</button>
+    <button class="btn btn-info" onclick="$.PITHY.Modal.info({title: '提示',message: '信息提示',onOk: function() {alert('ok');}})">信息提示</button>
+    <button class="btn btn-success" onclick="$.PITHY.Modal.success({title: 'success',message: '成功提示'})">成功提示</button>
+    <button class="btn btn-danger" onclick="$.PITHY.Modal.error({title: 'error',message: '失败提示'})">失败提示</button>
+    <button class="btn btn-primary" onclick="$.PITHY.Modal.confirm({title: '确认提示',message:　'确认删除吗', onCancle: function(){alert('cancle')}, onOk: function()　{alert('ok')}})">确认提示</button>
 </div>
 </body>
 </html>

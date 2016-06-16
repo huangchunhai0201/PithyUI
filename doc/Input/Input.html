@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Input</title>
+    <script src="/PithyUI/lib/lib.js"></script>
+    <script src="/PithyUI/css/css.js"></script>
+    <script src="/PithyUI/js-h/works.js"></script>
+</head>
+<body class="container">
+<div class="inputWrap1" style="margin-top: 12px;">
+
+</div>
+<div class="inputWrap2" style="margin-top: 12px;">
+
+</div>
+<div class="inputWrap3" style="margin-top: 12px;">
+
+</div>
+<div class="inputWrap4" style="margin-top: 12px;">
+
+</div>
+<div class="inputWrap5" style="margin-top: 12px;">
+
+</div>
+<script>
+    var inputAgent1 = $.PITHY.createAgent.input({
+        'style': 'line-height: 40px;height: 40px;',
+        'placeholder': '内容区域'
+    });
+    inputAgent1.build('.inputWrap1');
+
+    var inputAgent2 = $.PITHY.createAgent.input({
+        'style': 'line-height: 40px;height: 40px;',
+        'placeholder': '内容区域',
+        'addonBefore': 'KM/H'
+    });
+    inputAgent2.build('.inputWrap2');
+
+    var inputAgent3 = $.PITHY.createAgent.input({
+        'style': 'line-height: 40px;height: 40px;',
+        'placeholder': '内容区域',
+        'addonAfter': 'KM/H'
+    });
+    inputAgent3.build('.inputWrap3');
+
+    var inputAgent4 = $.PITHY.createAgent.input({
+        'style': 'line-height: 40px;height: 40px;',
+        'placeholder': '内容区域',
+        'addonBefore': 'http://',
+        'addonAfter': '.com'
+    });
+    inputAgent4.build('.inputWrap4');
+
+    var inputAgent5 = $.PITHY.createAgent.input({//这边的样式有问题
+        'placeholder': '内容区域',
+        'buttonAfter': '搜索',
+        'click': function() {
+            alert('搜索');
+        }
+    });
+    inputAgent5.build('.inputWrap5');
+</script>
+</body>
+</html>

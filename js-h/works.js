@@ -5,6 +5,9 @@
     var modules = [
         "Init.js",
         "Utils.js",
+        "Control.js",
+        "Input.js",
+        "Select.js",
         "Modal.js",
         "Tree.js"
     ];
