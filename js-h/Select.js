@@ -42,6 +42,7 @@
 
     };
     if (EXTEND) {
+        console.log('test');
         $.PITHY.utils.inherits(Select, EXTEND);
     }
 })(jQuery);
