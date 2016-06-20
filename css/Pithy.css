@@ -334,6 +334,7 @@
     font-size: 12px;
 }
 .pithy-select .select-body {
+    display: none;
     position: absolute;
     left: 0;
     top: 28px;

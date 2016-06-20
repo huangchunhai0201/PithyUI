@@ -38,11 +38,31 @@
             //         var option = '<div></div>';
             //     }
             // }
+        },
+        initControl: function() {
+            var self = this;
+            var jSelectLabel = this._jControl.find('.select-label');
+            this._jSelectBody = this._jControl.find('.select-body');
+            jSelectLabel.click(function() {
+                self._jSelectBody.toggle();
+                self._changSelectIcon();
+            });
+            this._jSelectBody.find('li').click(function() {
+                self._jSelectBody.toggle();
+                jSelectLabel.text($(this).text());
+                self._changSelectIcon();
+            });
+        },
+        _changSelectIcon: function() {//todo:未能动态改变图标
+            var jIcon = this._jSelectBody.find('.select-body .icon');
+            if (this._jSelectBody.is(':hidden')) {
+                jIcon.text('&#xe603;');
+            } else {
+                jIcon.text('&#xe602;');
+            }
         }
-
     };
     if (EXTEND) {
-        console.log('test');
         $.PITHY.utils.inherits(Select, EXTEND);
     }
 })(jQuery);
